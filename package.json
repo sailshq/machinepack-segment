@@ -1,6 +1,6 @@
 {
   "name": "machinepack-segment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Manage users, actions, cohorts and more w/ Segment.",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
