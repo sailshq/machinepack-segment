@@ -65,12 +65,12 @@ module.exports = {
     integrations: {
       typeclass: 'dictionary',
       description: 'A dictionary of Segment integrations to either enable or disable.',
-      extendedDescription: '"All" is a special key that applies when no key for a specific integration is found. This input defaults "All" to true, and "Salesforce" and "Marketo" to false. This is because these integrations have strict limits on API calls, and you don\'t want to run over your limits by accident.',
+      extendedDescription: '"All" is a special key that applies when no key for a specific integration is found. This input defaults "All" to true, and "Salesforce" and "Mixpanel" to false. This is because these integrations have strict limits on API calls, and you don\'t want to run over your limits by accident.',
       moreInfoUrl: 'https://segment.com/docs/spec/common#integrations',
       defaultsTo: {
         All: true,
         Salesforce: false,
-        Marketo: false
+        Mixpanel: false
       }
     },
 
@@ -103,7 +103,7 @@ module.exports = {
       // context: inputs.context||{},
       integrations: inputs.integrations||{
         All: true,
-        Marketo: false,
+        Mixpanel: false,
         Salesforce: false
       }
     }, function(err, batch){

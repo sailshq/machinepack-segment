@@ -25,7 +25,9 @@
     "machines": [
       "track",
       "identify",
-      "group"
+      "group",
+      "alias",
+      "page"
     ],
     "testsUrl": "https://travis-ci.org/treelinehq/machinepack-segment"
   },
