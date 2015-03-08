@@ -1,10 +1,10 @@
 module.exports = {
 
 
-  friendlyName: 'Track user action',
+  friendlyName: 'Track pageview',
 
 
-  description: 'Track a user action by triggering an event in Segment.',
+  description: 'Track whenever a user sees a page of your website or screen of your mobile app, along with any properties about the page.',
 
 
   extendedDescription: '',
@@ -29,17 +29,22 @@ module.exports = {
       required: true
     },
 
-    event: {
-      description: 'The name of the action this user performed.',
-      example: 'foobarbaz',
+    pageName: {
+      description: 'The name of the of the page, for example "Signup" or "Home".',
+      example: 'Signup',
       required: true
+    },
+
+    pageCategory: {
+      description: 'The category of the page. Useful for things like ecommerce where many pages often live under a larger category.',
+      example: 'Docs'
     },
 
     properties: {
       typeclass: 'dictionary',
-      description: 'A free-form dictionary of properties of the event, like "quantity".',
-      extendedDescription: 'Certain properties have special meaning in Segment.  See the "Properties docs" on Segment\'s website for a list of special properties.',
-      moreInfoUrl: 'https://segment.com/docs/spec/track#properties'
+      description: 'A free-form dictionary of properties of the page, like "keywords" or "referrer".',
+      extendedDescription: 'Certain properties like "url" or "title" have special meaning in Segment.  See the "Properties docs" on Segment\'s website for a list of special properties.',
+      moreInfoUrl: 'https://segment.com/docs/spec/page#properties'
     },
 
     integrations: {
@@ -77,16 +82,24 @@ module.exports = {
     var SegmentIO = require('analytics-node');
     var api = new SegmentIO(inputs.writeKey);
 
-    api.track({
+    var opts = {
       userId: inputs.userId,
-      event: inputs.event,
       properties: inputs.properties||{},
       integrations: inputs.integrations||{
         All: true,
         Mixpanel: false,
         Salesforce: false
       }
-    }, function(err, batch){
+    };
+
+    if (inputs.pageName) {
+      opts.name = inputs.pageName;
+    }
+    if (inputs.pageCategory) {
+      opts.category = inputs.pageCategory;
+    }
+
+    api.page(opts, function(err, batch){
       if (err) return exits.error(err);
       return exits.success();
     });
