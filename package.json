@@ -26,6 +26,11 @@
       "track",
       "identify",
       "group"
-    ]
+    ],
+    "testsUrl": "https://travis-ci.org/treelinehq/machinepack-segment"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:treelinehq/machinepack-segment.git"
   }
 }
