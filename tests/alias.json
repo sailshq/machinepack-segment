@@ -1,0 +1,10 @@
+{
+  "machine": "alias",
+  "expectations": [
+    {
+      "todo": true,
+      "using": {},
+      "outcome": "success"
+    }
+  ]
+}

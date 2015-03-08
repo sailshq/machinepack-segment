@@ -8,7 +8,7 @@
 Manage users, actions, cohorts and more w/ Segment.
 
 
-## Installation &nbsp; [![NPM version](https://badge.fury.io/js/machinepack-segment.svg)](http://badge.fury.io/js/machinepack-segment) [![Build Status](https://travis-ci.org/treelinehq/machinepack-segment.png?branch=master)](https://travis-ci.org/treelinehq/machinepack-segment)
+## Installation &nbsp; [![NPM version](https://badge.fury.io/js/machinepack-segment.svg)](http://badge.fury.io/js/machinepack-segment) [![Build Status](https://travis-ci.org/mikermcneil/machinepack-segment.png?branch=master)](https://travis-ci.org/mikermcneil/machinepack-segment)
 
 ```sh
 $ npm install machinepack-segment
@@ -26,5 +26,5 @@ Learn more at <a href="http://node-machine.org/implementing/FAQ" title="Machine 
 
 ## License
 
-MIT &copy; 2015 contributors
+MIT &copy; 2015 Mike McNeil and contributors
 
