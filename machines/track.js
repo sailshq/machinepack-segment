@@ -24,6 +24,7 @@ module.exports = {
 
     userId: {
       description: 'A unique identifier for the user who performed this action.',
+      extendedDescription: 'An arbitrary unique identifier for this user.',
       moreInfoUrl: 'https://segment.com/docs/spec/identify#identities',
       example: '019mr8mf4r',
       required: true
